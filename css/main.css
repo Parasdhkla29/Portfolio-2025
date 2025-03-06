@@ -44,6 +44,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap");
 
 :root {
+  --svg-fill-color: black;
+  --logo-color-light: black;
+  --logo-color-dark: white;
   --_size: 2rem;
   --_radius-s: 2rem;
   --_radius-m: 3rem;
@@ -193,7 +196,7 @@
 
 /* Front page image */
 .media-image-1 {
-  background-image: url("./11123.jpg");
+  background-image: url("../images/11123.jpg");
 }
 
 /* not sure */
@@ -387,11 +390,11 @@ img {
 }
 
 .fullscreen-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
   width: 100%;
-  min-width: 360px;
+  /* min-width: 360px; */
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -1123,12 +1126,6 @@ h2 .colored {
 @media only screen and (min-width: 768px) {
   .section__text {
     margin-top: 3.4rem;
-  }
-}
-
-@media only screen and (min-width: 1400px) {
-  .section__text {
-    margin-top: 4.1rem;
   }
 }
 
@@ -2283,13 +2280,27 @@ form textarea:required:valid {
 .header__logo {
   position: relative;
   height: 100%;
-  color: var(--t-bright);
+  /* color: var(--t-bright); */
+}
+
+@media (prefers-color-scheme: light) {
+  .header__logo svg {
+    color: var(--logo-color-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header__logo svg {
+    color: var(--logo-color-dark);
+  }
 }
 
 .header__logo svg {
   display: block;
   height: 100%;
   width: auto;
+  color: var(--t-bright);
+  /* color: var(--svg-fill-color); */
 }
 
 .menu-trigger {
@@ -2429,17 +2440,10 @@ form textarea:required:valid {
 
 .main__content {
   position: relative;
+  /* border: 2px solid red; */
+  display: flex;
 }
 
-@media only screen and (min-width: 1200px) {
-  .main__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
 
 .main__intro {
   position: relative;
@@ -2458,13 +2462,15 @@ form textarea:required:valid {
   position: relative;
   padding: 10rem 0;
   z-index: 2;
+  width: 100%;
+  /* border: 2px solid white; */
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .intro__content {
     padding: 14rem 0;
   }
-}
+}*/
 
 @media only screen and (min-width: 1200px) {
   .intro__content {
@@ -2477,6 +2483,7 @@ form textarea:required:valid {
   position: relative;
   width: 100%;
   padding: 0 2rem;
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -2589,9 +2596,9 @@ form textarea:required:valid {
 }
 
 .media__image {
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 0; */
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -3134,45 +3141,20 @@ form textarea:required:valid {
 
 .inner__content {
   position: relative;
-  padding-top: 70px;
   background-color: var(--base-inner);
 }
 
-@media only screen and (min-width: 768px) {
-  .inner__content {
-    padding-top: 90px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .inner__content {
-    padding-top: 0;
-    background-color: transparent;
-    height: 100%;
-    min-height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overflow: hidden;
-  }
-}
 
 .inner__info,
 .inner__media {
   position: relative;
-}
-
-@media only screen and (min-width: 1200px) {
-
-  .inner__info,
-  .inner__media {
-    height: 100%;
-  }
+  /* border: 2px solid red; */
 }
 
 .inner__info {
   background-color: var(--base-inner);
+  height: 100vh;
   overflow-y: auto;
-  overflow-x: hidden;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -3212,24 +3194,13 @@ form textarea:required:valid {
 
 .inner__container {
   position: relative;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
 }
 
 .inner__container:last-of-type {
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 768px) {
-  .inner__container {
-    margin-bottom: 10rem;
-  }
-}
-
-@media only screen and (min-width: 1400px) {
-  .inner__container {
-    margin-bottom: 11rem;
-  }
-}
 
 .content-block {
   position: relative;
@@ -3529,8 +3500,12 @@ form textarea:required:valid {
 /* ------------------------------------------------*/
 /* Contact Data Start */
 /* ------------------------------------------------*/
-.contactdata {
+/* .contactdata {
   margin-bottom: 2.8rem;
+} */
+
+.contactdata {
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -3542,11 +3517,15 @@ form textarea:required:valid {
 }
 
 .contactdata__title {
-  margin-bottom: 0.4rem;
+  margin-bottom: 10px;
 }
 
-.contactdata__descr {
+/* .contactdata__descr {
   white-space: nowrap;
+} */
+
+.contactdata__descr {
+  margin-bottom: 10px;
 }
 
 .contactdata__descr p.small {
@@ -3558,15 +3537,22 @@ form textarea:required:valid {
 }
 
 .contactdata__socials {
-  display: block;
   position: relative;
   font: normal 400 1.8rem/1.5 "Inter", sans-serif;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .contactdata__socials li {
-  display: block;
   font: normal 400 1.8rem/1.5 "Inter", sans-serif;
   color: var(--t-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Space between icon and text */
 }
 
 .contactdata__socials li i {
